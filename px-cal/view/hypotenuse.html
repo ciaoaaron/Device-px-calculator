@@ -1,0 +1,21 @@
+<p class="intro" ng-class="{ 'expanded': introExpanded }" ng-click="toggleIntro();">
+	<span>Hypotenuse 
+		<span ng-show=" !introExpanded ">+</span>
+		<span ng-show=" introExpanded ">&minus;</span>
+	</span> 
+<p>
+<h2>Find Diagonal Screen Size</h2>
+<div ng-class="{ 'form-error': true, 'has-error': widthCalculator.$invalid }" >
+	<p ng-show=" widthCalculator.deviceWidth.$error.pattern ||
+			 widthCalculator.deviceHeight.$error.pattern ||
+			 widthCalculator.ppi.$error.pattern "> <strong>Device Width</strong> and <strong>Device Height</strong> all need to be number</p>
+</div>
+<form name="widthCalculator" class="width-calculator">
+	<fieldset>
+		<label for="device-width">Device Width</label>
+		<input id="device-width" name="deviceWidth" type="text" placeholder="Device Width" ng-model="w" ng-pattern="/^\d+$/" />
+		<label for="device-height">Device Height</label>
+		<input id="device-height" name="deviceHeight" type="text" placeholder="Device Height" ng-model="h" ng-pattern="/^\d+$/" />
+	</fieldset>
+</form>
+<div ng-class="{ 'results': true, 'has-result': result }" ng-bind=" convert( w, h ) ? result :'';  "></div>

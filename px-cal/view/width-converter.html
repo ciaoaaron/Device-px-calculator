@@ -1,0 +1,23 @@
+<p class="intro" ng-class="{ 'expanded': introExpanded }" ng-click="toggleIntro();">
+	<span>Why 
+		<span ng-show=" !introExpanded ">+</span>
+		<span ng-show=" introExpanded ">&minus;</span>
+	</span> does Apple advertise the iPhone 4 screen as 960&times;640, but the pages render out as 320&times;480 ?<br><br>Turns out device width &ne; CSS width. Find the marketing specs, plug them in here and find out the CSS Width of a specific device.
+<p>
+<h2>Device px &gt; CSS px</h2>
+<div ng-class="{ 'form-error': true, 'has-error': widthCalculator.$invalid }" >
+	<p ng-show=" widthCalculator.deviceWidth.$error.pattern ||
+			 widthCalculator.deviceHeight.$error.pattern ||
+			 widthCalculator.ppi.$error.pattern "> <strong>Device Width</strong>, <strong>Device Height</strong> and <strong>PPI</strong> all need to be number</p>
+</div>
+<form name="widthCalculator" class="width-calculator">
+	<fieldset>
+		<label for="device-width">Device Width</label>
+		<input id="device-width" name="deviceWidth" type="text" placeholder="Device Width" ng-model="w" ng-pattern="/^\d+$/" />
+		<label for="device-height">Device Height</label>
+		<input id="device-height" name="deviceHeight" type="text" placeholder="Device Height" ng-model="h" ng-pattern="/^\d+$/" />
+		<label for="ppi">PPI</label>
+		<input id="ppi" name="ppi" type="text" placeholder="PPI" ng-model="ppi" ng-pattern="/^\d+$/" />
+	</fieldset>
+</form>
+<div ng-class="{ 'results': true, 'has-result': results.cssWidth }" ng-bind=" convert( w, h, ppi ).cssWidth ? results.cssWidth + ' \&times; ' + results.cssHeight:'';  "></div>
