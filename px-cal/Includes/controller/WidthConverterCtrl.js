@@ -1,7 +1,6 @@
-CalculatorTool.controller('WidthConverterCtrl', function( $scope ){
-
+CalculatorTool.controller('WidthConverterCtrl', function( $rootScope, $scope ){
 	var zf; //zoom factor
-
+	$rootScope.updateNavStyle( { isMain: false} );
 	$scope.introExpanded = false;
 	$scope.toggleIntro = function(){
 		$scope.introExpanded = !$scope.introExpanded;

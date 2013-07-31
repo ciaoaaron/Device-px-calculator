@@ -3,13 +3,17 @@
 	<head>
 		<title>Px Calculator</title>
 		<link rel="stylesheet" href="Includes/css/global.css" />
+		<link rel="stylesheet" href="Includes/css/icons.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
 		<script src="Includes/js/CalculatorTools.js"></script>
+		<script src="Includes/controller/navCtrl.js"></script>
+		<script src="Includes/controller/mainCtrl.js"></script>
 		<script src="Includes/controller/WidthConverterCtrl.js"></script>
 		<script src="Includes/controller/HypotenuseCtrl.js"></script>
 		<script src="Includes/controller/ppiCtrl.js"></script>
 	</head>
 	<body ng-app="CalculatorTool">
+		<div ng-include src="'view/nav.html'" ng-controller="navCtrl"></div>
 		<div ng-view></div>
 	</body>
 	<script>

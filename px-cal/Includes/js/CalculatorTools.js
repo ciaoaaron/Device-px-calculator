@@ -2,7 +2,8 @@ var CalculatorTool = angular.module('CalculatorTool', [])
 .config(function( $routeProvider ){
 	$routeProvider
 	.when( '/', {
-		templateUrl: 'view/menu.html'
+		controller: 'mainCtrl',
+		templateUrl: 'view/main.html'
 	})
 	.when('/hypotenuse', {
 		controller: 'HypotenuseCtrl',
