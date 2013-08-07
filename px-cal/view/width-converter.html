@@ -2,9 +2,9 @@
 	<span>Why 
 		<span ng-show=" !introExpanded ">+</span>
 		<span ng-show=" introExpanded ">&minus;</span>
-	</span> does Apple advertise the iPhone 4 screen as 960&times;640, but the pages render out as 320&times;480 ?<br><br>Turns out device width &ne; CSS width. Find the marketing specs, plug them in here and find out the CSS Width of a specific device.
+	</span>Why does Apple advertise the iPhone 4 screen as 960&times;640, but the pages render out as 320&times;480 ?<br><br>Turns out device width &ne; CSS width. Find the marketing specs, plug them in here and find out the CSS Width of a specific device.
 <p>
-<h2>Device px &gt; CSS px</h2>
+<h2>Device px &#8594; CSS px</h2>
 <div ng-class="{ 'form-error': true, 'has-error': widthCalculator.$invalid }" >
 	<p ng-show=" widthCalculator.deviceWidth.$error.pattern ||
 			 widthCalculator.deviceHeight.$error.pattern ||
