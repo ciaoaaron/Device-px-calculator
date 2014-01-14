@@ -1,9 +1,10 @@
-<p class="intro" ng-class="{ 'expanded': introExpanded }" ng-click="toggleIntro();">
-	<span>Why 
+<p class="intro" ng-class="{ 'expanded': introExpanded }" ng-click="toggleIntro()">
+	<span>Device VS CSS 
 		<span ng-show=" !introExpanded ">+</span>
 		<span ng-show=" introExpanded ">&minus;</span>
-	</span>Why does Apple advertise the iPhone 4 screen as 960&times;640, but the pages render out as 320&times;480 ?<br><br>Turns out device width &ne; CSS width. Find the marketing specs, plug them in here and find out the CSS Width of a specific device.
-<p>
+	</span>
+	Device dimensions are usually in marketing specs, but CSS dimensions is helpful when you need to manually set up your breakpoints.
+</p>
 <h2>Device px &#8594; CSS px</h2>
 <div ng-class="{ 'form-error': true, 'has-error': widthCalculator.$invalid }" >
 	<p ng-show=" widthCalculator.deviceWidth.$error.pattern ||

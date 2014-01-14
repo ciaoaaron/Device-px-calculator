@@ -2,7 +2,9 @@ body {
 	font-family: Helvetica, Arial, 'Sans-serif';
 	letter-spacing: -1px;
 	margin: 0;
-	width: 100%;
+	width: 250px;
+	height: auto;
+	min-height: 120px;
 }
 h1, h2, p, ul {
 	margin: 0;
@@ -10,7 +12,7 @@ h1, h2, p, ul {
 }
 form {
 	width: auto;
-	margin: 30px;
+	margin: 20px;
 }
 fieldset {
 	border: 0;
@@ -39,12 +41,11 @@ input[type="submit"]:hover {
 }
 input[type="text"] {
 	color: #666;
-	font-size: 40px;
-	font-family: : Helvetica, Arial, 'Sans-serif';
-	height: 100px;
-	letter-spacing: -3px;
+	font-size: 20px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	height: 50px;
 	margin-bottom: 20px;
-	padding: 20px;
+	padding: 10px;
 	width: 100%;
 	text-align: center;
 }
@@ -64,7 +65,8 @@ input[type="text"] {
    color: #e5e5e5;  
 }
 h2 {
-	padding: 20px 30px 0;
+	padding: 10px 15px 0 20px;
+	font-size:  1em;
 }
 .result,
 .calculator-menu .cal-type,
@@ -77,26 +79,22 @@ input[type="text"],
 input[type='text'].ng-invalid {
 	border: 1px solid #b10b0b;
 }
-/* Animation
----------------------------------------------------------------------------- */
-@keyframes showTooltip {
-
-	from {
-
-
-
-	}
-	to {
-
-
-	}
-
+/* Nav
+--------------------------------------------------*/
+.nav .selected-indicator {
+	border: 1px solid #d5d5d5;
+	height: 1.25em;
+	width: 1.25em; /* 20/16 */
+	display: block; 
+	float:  left;
+	margin-right:  10px;
+	border-radius: 30px;
 }
 /* Main Nav
 ---------------------------------------------------------------------------- */
 .calculator-menu .descriptive-text {
-	position: relative;
-	top: 10px;
+	text-align: left;
+	float: left;
 }
 .calculator-menu ul {
 	list-style-type: none;
@@ -104,52 +102,43 @@ input[type='text'].ng-invalid {
 	margin: 0 auto;
 	overflow: hidden;
 }
-.calculator-menu .cal-type {
+.calculator-menu .cal-type:hover {
+	background-color: #f0eeee;
+}
+.calculator-menu .cal-type.selected .selected-indicator {
+	background-color: #696969;
+}
+.calculator-menu .selected.cal-type:hover {
 	background-color: #f5f5f5;
-	height: 200px;
-	min-height: auto;
-	padding: 50px;
-	position: relative;
-	text-align: right;
+}
+.calculator-menu .cal-type.selected a {
+	cursor: default;
 }
 .calculator-menu .cal-type a {
+	border: 0;
 	color: #696969;
 	display: block;
-	font-size: 18px;
+	font-size: 14px;
 	height: 100%;
-	line-height: 18px;
-	min-height: 60px;
+	padding: 10px 20px;
 	position: relative;
 	text-decoration: none;
 	width: 100%;
-}
-.calculator-menu .cal-type .descriptive-text {
-
+	outline: 0;
+	line-height: 20px;
 }
 .calculator-menu .icon {
 	left: 10%;
 }
-.suppressed.calculator-menu .cal-type {
+.calculator-menu .cal-type {
 	background-color: #f5f5f5;
 	border: 0;
-	float: left;
-	height: auto;
+	height: 40px;
 	margin: 0;
-	min-height: 80px;
-	width: 33.3%;
-	padding: 20px 0;
+	width: 100%;
 }
 .suppressed.calculator-menu ul {
 	width: 100%;
-}
-.suppressed.calculator-menu .cal-type a {
-	border: 0;
-	padding: 0;
-}
-.suppressed.calculator-menu .descriptive-text {
-	position: absolute;
-	left: -999em;
-	top: 0;
 }
 /* Calculator Interface
 ---------------------------------------------------------------------------- */
@@ -160,13 +149,14 @@ input[type='text'].ng-invalid {
 .intro {
 	background-color: #f5f5f5;
 	color: #3b3b3b;
-	font-size: 18px;
-	height: 35px;
-	line-height: 25px;
+	font-size: 12px;
+	height: 25px;
+	line-height: 17px;
 	letter-spacing: 0;
 	margin: 0;
 	overflow: hidden;
-	padding: 30px;
+	padding: 0 20px 15px;
+	/* position: relative; */
 }.intro.expanded {
 	height: auto;
 }
@@ -174,24 +164,27 @@ input[type='text'].ng-invalid {
 	color: #3b3b3b;
 	cursor: pointer;
 	display: block;
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: bold;
 	line-height: 40px;
-	margin-bottom: 20px;
+	/* margin-bottom: 20px; */
 	text-indent: 0;
 }
 .intro span span {
 	display: inline;
 }
 .results {
-	padding: 50px 20px;
 	width: 100%;
 	text-align: center;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
 }
 .has-result {
 	background-color: #b7dc8b;
 	color: #666;
 	font-size: 40px;
+	padding: 20px;
 }
 .form-error {
 	line-height: 22px;

@@ -1,16 +1,16 @@
-<div ng-class="{ 'calculator-menu': true, 'suppressed': navStyle.supressed }">
+<div class="nav calculator-menu">
 	<ul>
-		<li class="cal-type"><a href="#/hypotenuse">
-			<span ng-include src="'view/icons/icon-screen-size.html'"></span>
+		<li class="cal-type" ng-click="selectItem('diagonal')" ng-class="{selected: selectedItem === 'diagonal'}"><a href="#/hypotenuse">
+			<span class="selected-indicator"></span>
 			<span class="descriptive-text">Diagonal Screen Size</span>
 		</a></li>
-		<li class="cal-type"><a href="#/ppi">
-			<span ng-include src="'view/icons/icon-ppi.html'"></span>
+		<li class="cal-type" ng-click="selectItem('ppi')" ng-class="{selected: selectedItem === 'ppi'}"><a href="#/ppi">
+			<span class="selected-indicator"></span>
 			<span class="descriptive-text">PPI</span>
 		</a></li>
-		<li class="cal-type"><a href="#/device-width-to-css-width">
-			<span ng-include src="'view/icons/icon-converter.html'"></span>
-			<span class="descriptive-text">CSS &#8594; Device width</span>
+		<li class="cal-type" ng-click="selectItem('css')" ng-class="{selected: selectedItem === 'css'}"><a href="#/device-width-to-css-width">
+			<span class="selected-indicator"></span>
+			<span class="descriptive-text">Device &#8594; CSS width</span>
 		</a></li>
 	</ul>
 </div>

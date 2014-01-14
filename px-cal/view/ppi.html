@@ -1,9 +1,10 @@
-<p class="intro" ng-class="{ 'expanded': introExpanded }">
+<p class="intro" ng-class="{ 'expanded': introExpanded }" ng-click="toggleIntro()">
 	<span>PPI 
-		<!-- <span ng-show=" !introExpanded ">+</span>
-		<span ng-show=" introExpanded ">&minus;</span> -->
-	</span> 
-<p>
+		<span ng-show=" !introExpanded ">+</span>
+		<span ng-show=" introExpanded ">&minus;</span>
+	</span>
+	PPI (pixels per inch) measures the resolution of a display. Higher PPI will result in a higer resolution display.   
+</p>
 <h2>Find PPI</h2>
 <div ng-class="{ 'form-error': true, 'has-error': widthCalculator.$invalid }" >
 	<p ng-show=" widthCalculator.deviceWidth.$error.pattern ||

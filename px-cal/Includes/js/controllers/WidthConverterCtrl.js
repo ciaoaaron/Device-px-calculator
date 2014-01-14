@@ -1,9 +1,12 @@
 CalculatorTool.controller('WidthConverterCtrl', function( $rootScope, $scope ){
 	var zf; //zoom factor
-	$rootScope.updateNavStyle( { isMain: false} );
 	$scope.introExpanded = false;
+	$scope.tooltipClass = false;
 	$scope.toggleIntro = function(){
 		$scope.introExpanded = !$scope.introExpanded;
+	}
+	$scope.showToolTip = function(){
+			$scope.tooltipClass = true;
 	}
 	$scope.convert = function( w, h, ppi ){
 		//Make sure we convert all arguments from string to number.

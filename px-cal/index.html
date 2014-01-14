@@ -4,76 +4,19 @@
 		<title>Px Calculator</title>
 		<link rel="stylesheet" href="Includes/css/global.css" />
 		<link rel="stylesheet" href="Includes/css/icons.css" />
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
-		<script src="Includes/js/CalculatorTools.js"></script>
-		<script src="Includes/controller/navCtrl.js"></script>
-		<script src="Includes/controller/mainCtrl.js"></script>
-		<script src="Includes/controller/WidthConverterCtrl.js"></script>
-		<script src="Includes/controller/HypotenuseCtrl.js"></script>
-		<script src="Includes/controller/ppiCtrl.js"></script>
+
+		<script src="angular.min.js"></script>
+		<script src="angular-route.min.js"></script>
+		
+		<script src="CalculatorTools.js"></script>
+		<script src="Includes/js/controllers/navCtrl.js"></script>
+		<script src="Includes/js/controllers/mainCtrl.js"></script>
+		<script src="Includes/js/controllers/WidthConverterCtrl.js"></script>
+		<script src="Includes/js/controllers/HypotenuseCtrl.js"></script>
+		<script src="Includes/js/controllers/ppiCtrl.js"></script>
 	</head>
-	<body ng-app="CalculatorTool">
+	<body ng-app="CalculatorTool" ng-csp>
 		<div ng-include src="'view/nav.html'" ng-controller="navCtrl"></div>
 		<div ng-view></div>
 	</body>
-	<script>
-
-
-		// (function(){
-
-		// 	var resultsView = document.getElementById('results'),
-		// 		form = document.getElementById('px-calculator'),
-		// 		intro = document.getElementById('intro');
-
-		// 	function getVal( id ){
-		// 		var val = document.getElementById( id ).value;
-		// 		return val;
-		// 	}
-		// 	function calCSSPixel( dw, dh, ppi ){
-		// 		var zf,
-		// 			i;
-		// 		//prep the param - covert them to float
-		// 		for( i = 0; i <= arguments.length-1; i++ ){
-		// 			if( typeof arguments[ i ] !== 'number' ){
-		// 				arguments[ i ] = parseFloat( arguments[ i ] );
-		// 			}
-		// 		}
-		// 		//figure out the zoom factor from ppi
-		// 		if( ppi < 200 ){
-		// 			zf = 1;
-		// 		}
-		// 		if( ppi >= 200 && ppi < 300 ){
-		// 			zf = 1.5;
-		// 		}
-		// 		if( ppi >= 300 ){
-		// 			zf = 2;
-		// 		}
-		// 		//devide both width and height by zoom factor to find CSS width and height
-		// 		return {
-		// 			cssWidth: ( dw/zf ),
-		// 			cssHeight: ( dh/zf )
-		// 		}
-		// 	}
-
-		// 	form.addEventListener('submit', function( e ){
-		// 		e.preventDefault();
-				
-		// 		var results = calCSSPixel( getVal('device-width'), getVal('device-height'), getVal('ppi') );
-				
-		// 		resultsView.className = 'has-result';
-		// 		resultsView.innerHTML = results.cssWidth + ' x ' + results.cssHeight;
-
-		// 	}, false);
-		// 	intro.addEventListener('click', function( e ){
-		// 		if( intro.className ){
-		// 			intro.firstChild.innerHTML = 'Why &plus;'
-		// 			intro.className = '';
-		// 			return;
-		// 		}
-		// 		intro.firstChild.innerHTML = 'Why &minus;'
-		// 		intro.className = 'expanded';	
-		// 	})
-
-		// }());
-	</script>
 </html>

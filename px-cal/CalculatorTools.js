@@ -1,4 +1,4 @@
-var CalculatorTool = angular.module('CalculatorTool', [])
+var CalculatorTool = angular.module('CalculatorTool', ['ngRoute'])
 .config(function( $routeProvider ){
 	$routeProvider
 	.when( '/', {
